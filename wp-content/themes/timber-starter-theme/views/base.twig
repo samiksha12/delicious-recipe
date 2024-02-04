@@ -1,0 +1,54 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		{{ function('wp_body_open') }}
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		
+		<header id="header" class="header" >
+			{% block header %}
+				<div class="wrapper">
+					<nav id="nav-main" class="main_nav" role="navigation">
+						<div class="logo"><a class="hdr-logo-link" href="{{site.url}}" rel="home"><img src="{{logo[0].thumbnail.src}}"></a></div>
+						<div class="nav_container">
+						{% include "menu.twig" with {'items': menu.get_items} %}
+						</div>
+					</nav><!-- #nav -->
+				</div>
+				<div class="main_image">
+            		<img class="first_image" src="{{post.thumbnail.src}}" alt="main iamge" />
+            		<div class="main_caption">
+                		{{ post.content }}
+            		</div>
+        		</div>
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	</body>
+</html>
