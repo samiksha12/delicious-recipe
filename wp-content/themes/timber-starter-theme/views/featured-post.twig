@@ -1,0 +1,17 @@
+
+{% if featured %}
+    {% for secondary in imagepost %}
+            <div class="overlay_image overlay_image_first">
+                <img class="sub_image_first" src="{{secondary.thumbnail.src}}" alt="">
+                <a href="{{secondary.link}}">
+                    <div class="overlay_desc">
+                        <span class="featured">Featured</span>
+                        <div>
+                            <div class="timing">&#128340; {{secondary.meta('Total Time')}}</div>
+                            <div class="dish_name">{{secondary.title}}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    {% endfor %}
+{% endif%}

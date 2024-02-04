@@ -5,74 +5,157 @@
 */
 
 * {
-    margin: 0;
-  }
-  body,html {
-    background-color: #f1f1ef;
-    font-family: sans-serif;
-    overscroll-behaviour:none;
-  }
-  header {
-    margin: 0;
-    width: 100%;
-    margin-bottom: 270px;
-  }
-  .main_nav {
-    background-color: #603c26;
-    color: whitesmoke;
-    /* font-size: 20px; */
-    height: 80px;
-    display: flex;
-  }
-  .logo img {
-    /* font-family: "Brush Script MT", cursive; */
-    height:80px;
-    /* width:30%; */
-    /* font-family: "Trattatello", fantasy; */
-  }
+  margin: 0;
+}
+body,
+html {
+  background-color: #f1f1ef;
+  font-family: sans-serif;
+  overscroll-behaviour: none;
+}
+header {
+  margin: 0;
+  width: 100%;
+  /* margin-bottom: 270px; */
+}
+.main_nav {
+  background-color: #603c26;
+  color: whitesmoke;
+  /* font-size: 20px; */
+  height: 80px;
+  display: flex;
+}
+.logo img {
+  /* font-family: "Brush Script MT", cursive; */
+  height: 80px;
+  /* width:30%; */
+  /* font-family: "Trattatello", fantasy; */
+}
 .nav_container {
-    margin: auto;
-    width: 80%;
-    height: 80px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-  .nav_container a {
-    text-decoration: none !important;
-    color: white !important;
-  }
-  .nav_container span{
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+  margin: auto;
+  width: 80%;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.nav_container a {
+  text-decoration: none !important;
+  color: white !important;
+}
+.nav_container span {
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
-  .main_image {
-    margin: 0;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    color: white;
-    z-index: 0;
-  }
-  .main_image .first_image {
-    min-width: 100%;
-    filter: brightness(50%);
-  }
-  .main_image .main_caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 50px;
-  }
-  .main_caption .span_heading {
-    font-size: 50px;
-  }
-  .main_caption .span_subheading {
-    font-size: 17px;
-  }
+.main_image {
+  margin: 0;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 0;
+}
+.main_image .first_image {
+  min-width: 100%;
+  filter: brightness(50%);
+}
+.main_image .main_caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 50px;
+}
+.main_caption .span_heading {
+  font-size: 50px;
+}
+.main_caption .span_subheading {
+  font-size: 17px;
+}
+.sub_image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -100px;
+  width: 100%;
+  align-items: center;
+}
+.overlay_image {
+  width: 25%;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 0;
+}
+.overlay_image a {
+  text-decoration: none;
+  color: white;
+}
+.overlay_image a:hover {
+  text-decoration: none;
+  color: white;
+}
+.overlay_image .overlay_desc {
+  height: 330px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured {
+  background-color: rgb(116 161 116);
+  padding: 10px;
+  margin: 20px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+.dish_name {
+  font-size: 27px;
+  /* padding: 10px; */
+  margin: 20px;
+}
+.overlay_image_first {
+  width: 338px;
+}
+.sub_image_first {
+  width: 338px;
+  filter: brightness(80%);
+}
+
+.overlay_image_first:first-child ,
+.overlay_image_first:first-child .sub_image_first {
+  height: 342px;
+  border-radius: 3% 0 0 3%;
+}
+.overlay_image_first:nth-child(2) ,
+.overlay_image_first:nth-child(2) .sub_image_first{
+  height: 358px;
+  border-radius: 3%;
+}
+
+.overlay_image_first:nth-child(3) ,
+.overlay_image_first:nth-child(3) .sub_image_first{
+  height: 342px;
+  border-radius: 0 3% 3% 0;
+}
+
+.blog-image{
+  width : 100%;
+  height: 400px;
+}
+
+
+.copyright{
+  padding: 10px;
+  text-align: center;
+}

@@ -12,7 +12,7 @@
 $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
-
+$context['logo']= Timber::get_posts(['post_type'=>'post','category_name'=>'logo']);
 if ( post_password_required( $timber_post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {

@@ -26,4 +26,5 @@ $context = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
 $context['logo']= Timber::get_posts(['post_type'=>'post','category_name'=>'logo']);
+$context['featured'] = Timber::get_posts(['post_type'=>'post','category_name'=>'featured','recipe-post']);
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );
