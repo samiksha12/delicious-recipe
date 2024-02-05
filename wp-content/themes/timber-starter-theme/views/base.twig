@@ -36,21 +36,34 @@
 	{% endblock %}
 {% endif %}
 {% if not fn('is_front_page') %}
-<section id="content" role="main" class="content-wrapper">
-	{% if title %}
-		<h1>{{title}}</h1>
-	{% endif %}
-	<div class="wrapper">
-		{% block content %}
-			Sorry, no content
-		{% endblock %}
-	</div>
-	{% if sidebar %}
-		<aside class="layout-sidebar">
-			{{sidebar}}
-		</aside>
-	{% endif %}
-</section>
+	<section id="content" role="main" class="content-wrapper">
+		{% if title %}
+			<h1>{{title}}</h1>
+		{% endif %}
+		<div class="wrapper">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</div>
+		{% if sidebar %}
+			<aside class="layout-sidebar">
+				{{sidebar}}
+			</aside>
+		{% endif %}
+	</section>
+{% endif %}
+
+{% if fn('is_front_page') %}
+	<section class="category_section">
+		<div class="categories">
+			<h2>Most Popular Categories</h2>
+			<div class="categories_subhead">Be sure not to miss out the recipes of these most popular categories. Enjoy
+							                trying them out!</div>
+			<div class="image_category d-flex justify-content-center flex-wrap">
+				{% include "front-category.twig" with {'category': categories } %}
+			</div>
+		</div>
+	</section>
 {% endif %}
 {% block footer %}
 	<footer id="footer">

@@ -1,0 +1,14 @@
+{% if category %}
+	{% for term in get_terms(category) %}
+		{% set option_name = "z_taxonomy_image" ~ term.id %}
+		{% set option_value = function('get_option', option_name) %}
+		<div class="boxes col-md-3 m-3">
+            <img src={{option_value}} alt=""/>
+			<div class="overlay_box">
+				<span class="overlay_title">{{term.title}}</span>
+				<a href="#">View all recipes</a>
+			</div>
+		</div>
+	{% endfor %}
+
+{% endif %}

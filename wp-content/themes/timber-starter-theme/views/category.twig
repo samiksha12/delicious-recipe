@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="category_section">
+		<div class="categories">
+			<h2>View All Categories</h2>
+			<div class="categories_subhead">Be sure not to miss out the recipes of these most popular categories. Enjoy
+							                trying them out!</div>
+			<div class="image_category d-flex justify-content-center flex-wrap">
+				{% include "front-category.twig" with {'category': categories } %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

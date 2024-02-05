@@ -1,0 +1,13 @@
+{% if list %}
+	{% for item in list %}
+		<div class="boxes col-md-3 m-3">
+			<a href="{{item.link}}">
+				<img src={{item.thumbnail.src}} alt=""/>
+				<div class="overlay_box">
+					<span class="overlay_title">{{item.title}}</span>
+					<span class="view">View recipes</span>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+{% endif %}

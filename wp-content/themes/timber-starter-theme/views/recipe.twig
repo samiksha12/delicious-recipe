@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="category_section">
+		<div class="categories">
+			<h2>View All Recipes</h2>
+			<div class="categories_subhead">Be sure not to miss out these delicious dish recipes!</div>
+			<div class="image_category d-flex justify-content-center flex-wrap">
+				{% include "recipe-list.twig" with {'list': recipe } %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
