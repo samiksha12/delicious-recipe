@@ -1,13 +1,26 @@
 {% extends "base.twig" %}
 
+{% set term_name = "from " ~ term %}
 {% block content %}
+
 <section class="category_section">
 		<div class="categories">
-			<h2>View All Recipes</h2>
+			<h2>View All Recipes {{(term) ? term_name : ''}}</h2>
+			{% if recipe is not empty %}
 			<div class="categories_subhead">Be sure not to miss out these delicious dish recipes!</div>
 			<div class="image_category d-flex justify-content-center flex-wrap">
 				{% include "recipe-list.twig" with {'list': recipe } %}
 			</div>
+			{% else %}
+				<div class="categories_subhead">Sorry we don't have any recipes for now!</div>
+			{% endif %}
+			{% if allrecipe %}
+			<div class="categories_subhead">You may be interested for this delicious dish recipes!</div>
+			<div class="image_category d-flex justify-content-center flex-wrap">
+				{% include "recipe-list.twig" with {'list': allrecipe } %}
+			</div>
+			{% endif %}
 		</div>
 	</section>
+	
 {% endblock %}

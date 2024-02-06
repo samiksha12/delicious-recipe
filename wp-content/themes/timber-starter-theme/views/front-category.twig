@@ -6,7 +6,7 @@
             <img src={{option_value}} alt=""/>
 			<div class="overlay_box">
 				<span class="overlay_title">{{term.title}}</span>
-				<a href="#">View all recipes</a>
+				<a href="{{ site.url }}/index.php/recipes?term={{term.slug}}">View all recipes</a>
 			</div>
 		</div>
 	{% endfor %}
